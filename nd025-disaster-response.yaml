@@ -1,0 +1,22 @@
+name: nd25-disaster
+channels:
+- conda-forge
+dependencies:
+- python=3.9
+- beautifulsoup4
+- bokeh
+- jupyter_bokeh
+- cloudpickle
+- conda-forge::blas=*=openblas
+- ipympl
+- ipywidgets
+- matplotlib-base
+- pandas
+- scikit-image
+- scikit-learn
+- scipy
+- numpy
+- seaborn
+- sqlalchemy
+- statsmodels
+- nltk
