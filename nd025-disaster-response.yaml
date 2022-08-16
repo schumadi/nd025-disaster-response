@@ -3,10 +3,6 @@ channels:
 - conda-forge
 dependencies:
 - python=3.9
-- beautifulsoup4
-- bokeh
-- jupyter_bokeh
-- cloudpickle
 - conda-forge::blas=*=openblas
 - ipympl
 - ipywidgets
