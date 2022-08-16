@@ -31,6 +31,7 @@
 
 
 <div class="jumbotron">
+    {% block jumbo %}
     <div class="container">
         <h1 class="text-center">Disaster Response Project</h1>
         <p class="text-center">Analyzing message data for disaster response</p>
@@ -47,9 +48,10 @@
             </div>
         </div>
 
-        {% block message %}
-        {% endblock %}
     </div>
+    {% endblock %}
+    {% block message %}
+    {% endblock %}
 </div>
 
 <div class="container">

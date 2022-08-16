@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+{% block title %}Model{% endblock %}
+
+{% block message %}
+    <hr />
+    <h1 class="text-center">Optuna</h1>
+    <h3 class="text-center">Best Trial Information</h3>
+{% endblock %}
+
+<div class="container">
+    {% block content %}
+        <p class="text-left">Estimator Score: {{best_trial.value | round(2)}}</p>
+        <p class="text-left">In multi-label classification, this is the subset accuracy 
+                                which is a harsh metric since you require for each sample 
+                                that each label set be correctly predicted.</p>
+        {% for key, value in best_trial.params.items():%}
+            <li class="list-item text-left">{{key, value}}</li>
+        {% endfor %}
+    {% endblock %}
+
+    {% for id in ids %}
+        <div id="{{id}}"></div>
+    {% endfor %}
+</div>
+
+{% block jumbo %}
+{% endblock %}
+
+<script type="text/javascript">
+    const graphs = {{graphJSON | safe}};
+    const ids = {{ids | safe}};
+    for(let i in graphs) {
+        Plotly.plot(ids[i], graphs[i].data, graphs[i].layout);
+    }
+</script>
